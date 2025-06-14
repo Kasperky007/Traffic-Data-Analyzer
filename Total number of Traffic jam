@@ -1,0 +1,9 @@
+def nm_of_jams(filepath):
+  jam_number=0
+
+  with open(filepath,"r")as file:
+    for line in file:
+      if ">>>" in line:
+        jam_number+=1
+    return jam_number
+print(nm_of_jams("traffic.txt"))
