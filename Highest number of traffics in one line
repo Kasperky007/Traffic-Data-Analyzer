@@ -1,0 +1,13 @@
+def maximum_traffic(filepath):
+  maximum_nm_of_cars=0
+
+  with open(filepath,"r") as file:
+    for line in file:
+      num_of_Cars=0
+      for char in line:
+        if char==">":
+          num_of_Cars+=1
+          if num_of_Cars>maximum_nm_of_cars:
+            maximum_nm_of_cars=num_of_Cars
+    return(maximum_nm_of_cars)
+print(maximum_traffic("traffic.txt"))
