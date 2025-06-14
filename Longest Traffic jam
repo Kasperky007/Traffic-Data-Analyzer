@@ -1,0 +1,12 @@
+def longest_jam(filepath):
+  long_jam=0
+  with open(filepath,"r") as file:
+    for line in file:
+      current_streak=0
+      for char in line:
+        if char==">":
+          current_streak+=1
+          if current_streak>long_jam:
+            long_jam=current_streak
+    return long_jam
+print(longest_jam("traffic.txt"))
