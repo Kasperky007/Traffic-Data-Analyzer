@@ -1,0 +1,16 @@
+def nm_of_emt_measurments(filepath):
+  nm_of_empty_lines=0
+  nm_of_lines=0
+ 
+  with open(filepath,"r") as file:
+    for line in file:
+      nm_of_lines+=1
+      has_car=False
+      for char in line:
+        if char==">":
+          has_car=True
+          break
+      if not has_car:
+        nm_of_empty_lines+=1
+    return ( nm_of_empty_lines/nm_of_lines)
+print(nm_of_emt_measurments("traffic.txt"))
